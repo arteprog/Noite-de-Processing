@@ -1,12 +1,8 @@
 # Noite de Processing
 
-[Noite de Processing]((https://garoa.net.br/wiki/Noite_de_Processing) é um encontro regular aberto para conversar sobre arte e programação, normalmente na última terça de cada mês às 19h. Se você deseja receber notificações sobre os encontros, cadastre-se no MeetUp: http://www.meetup.com/Noite-de-Processing/.
+Este repositório serve para publicar material apresentado na [Noite de Processing](https://garoa.net.br/wiki/Noite_de_Processing), um encontro regular aberto para conversar sobre arte e programação, normalmente na última terça de cada mês às 19h. Se você deseja receber notificações sobre os encontros, cadastre-se no MeetUp: http://www.meetup.com/Noite-de-Processing/.
 
-Este repositório serve para publicar material apresentado na Noite de Processing
-
-*Noite de Processing is a regular meetup to talk about art and programming, usually held every month on the last tuesday at 7PM. If you want to receive notifications about the meeting, join the MeetUp: http://www.meetup.com/Noite-de-Processing/.
-
-This repository is meant to publish content presented at Noite de Processing*
+*This repository is meant to publish content presented at* Noite de Processing, *a regular meetup to talk about art and programming, usually held every month on the last tuesday at 7PM. If you want to receive notifications about the meeting, join the MeetUp: http://www.meetup.com/Noite-de-Processing/.*
 
 ## atividades / *activities*
 
