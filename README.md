@@ -11,3 +11,5 @@ Este repositório serve para publicar material apresentado na [Noite de Processi
 **0916** Noite de Processing: Software Arte e Sistema de Partículas, com João Antonio de F. P. e Ferreira
 
 **1016** Noite de Processing: Física com P5.JS e BOX2D, com Pedro Emilio Guglielmo
+
+**0517** Noite de Processing: Mapas, Grafos e Geometria Computacional: usando Processing para visualizar a matemática, com Fábio Hirano
