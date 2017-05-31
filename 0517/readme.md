@@ -1,4 +1,4 @@
-30/05/2017 Mapas, Grafos e Geometria Computacional: usando Processing para visualizar a matemática - Fábio Hirano[editar]
+**30/05/2017 Mapas, Grafos e Geometria Computacional: usando Processing para visualizar a matemática - Fábio Hirano**
 
 [19h30] Mapas, Grafos e Geometria Computacional: usando Processing para visualizar a matemática: Nessa conversa, Fábio irá mostrar um pouco de seu trabalho usando Processing para facilitar o entendimento de teorias matemáticas, além de permitir que se fale de matemática nos mais diversos ambientes.
 
