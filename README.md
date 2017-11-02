@@ -13,3 +13,5 @@ Este repositório serve para publicar material apresentado na [Noite de Processi
 **1016** Noite de Processing: Física com P5.JS e BOX2D, com Pedro Emilio Guglielmo
 
 **0517** Noite de Processing: Mapas, Grafos e Geometria Computacional: usando Processing para visualizar a matemática, com Fábio Hirano
+
+**0817** Noite de Processing: Hands-on: algoritmo genético interativo, com Julio Trevisan
