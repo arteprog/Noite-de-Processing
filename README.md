@@ -15,3 +15,5 @@ Este repositório serve para publicar material apresentado na [Noite de Processi
 **0517** Noite de Processing: Mapas, Grafos e Geometria Computacional: usando Processing para visualizar a matemática, com Fábio Hirano
 
 **0817** Noite de Processing: Hands-on: algoritmo genético interativo, com Julio Trevisan
+
+**0917** Noite de Processing:Fractais IFS e o Jogo do Caos, com Tatyana Zabanova
