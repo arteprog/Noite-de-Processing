@@ -1,10 +1,12 @@
 # Noite de Processing
 
-Este repositório serve para publicar material apresentado na [Noite de Processing](https://garoa.net.br/wiki/Noite_de_Processing), um encontro aberto para conversar sobre arte e programação, normalmente na última terça de cada mês às 19h. Se você deseja receber notificações sobre os encontros, cadastre-se no MeetUp: http://www.meetup.com/Noite-de-Processing/.
+Este repositório serve para publicar material da [Noite de Processing](https://garoa.net.br/wiki/Noite_de_Processing), um encontro aberto para conversar sobre arte e programação, normalmente na última terça de cada mês às 19h.
 
-*This repository is meant to publish content presented at [Noite de Processing](https://garoa.net.br/wiki/Noite_de_Processing), a regular meetup to talk about art and programming, usually held every month on the last tuesday at 7PM. If you want to receive notifications about the meeting, join the MeetUp: http://www.meetup.com/Noite-de-Processing/.*
+*This repository is meant to publish content from [Noite de Processing](https://garoa.net.br/wiki/Noite_de_Processing), a regular meetup to talk about art and programming, usually held every month on the last tuesday at 7PM.
 
-## atividades / *activities*
+## [registro/histórico da página do encontro](historico)
+
+## código e arquivos de algumas das atividades / *code and files from some of the activities*
 
 **0816** Noite de Processing: Introdução à Visão Computacional usando Processing, com Airton Gaidys
 
