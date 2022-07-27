@@ -1,5 +1,6 @@
 float sq3;
-int TS = 4;
+int TS = 2;
+float ZOOM = 22.5;
 
 //"GLM":{ "T1":[-1,0,2,2], "T2":[3,2,-1,-2], "Seed":[ [0,0,0,0], [-1,0,2,1], [0,0,1,0], [0,0,1,1], [0,1,1,0], [1,1,1,0], [1,2,1,-1], [1,2,1,0], [2,2,0,-2], [2,2,0,-1], ] }
 Wcoord T1;
@@ -13,14 +14,23 @@ int[] polytype = { -1, -1, 3, 4, 6, 12 };
 
 color[] palette = { #000000, #000000, #FF7231, #FBFF31, #31FFBF, #9731FF };
 
+String[] palettestr = { "", "", "FF7231", "FBFF31", "31FFBF", "9731FF" };
+
+String ID = "NPS_3";// "HLMNQTU";// "PSTUW";// "KNPQU_2";//
+
 void setup() {
   size(600, 600);
 
   sq3 = sqrt(3);
   
   JSONObject json;
-  json = loadJSONObject("Galebach.json");//SaeSa.json
-  JSONObject ladrilhamento = json.getJSONObject("t6371");
+  
+  //json = loadJSONObject("Galebach.json");//SaeSa.json
+  //JSONObject ladrilhamento = json.getJSONObject("t6460");
+  
+  json = loadJSONObject("SaeSa.json");
+  JSONObject ladrilhamento = json.getJSONObject(ID);//HLMNQTU//KNPQU_2//NPS_3
+
   JSONArray t1a = ladrilhamento.getJSONArray("T1");
   T1 = new Wcoord( t1a.getInt(0), t1a.getInt(1), t1a.getInt(2), t1a.getInt(3) );
   JSONArray t2a = ladrilhamento.getJSONArray("T2");
@@ -50,7 +60,7 @@ void setup() {
 void draw() { 
   background(127);
   translate( 300, 300 );
-  scale(15);
+  scale(ZOOM);
 
   HashMap<String, Wcoord> hash = new HashMap<String, Wcoord>();
 
@@ -62,10 +72,14 @@ void draw() {
       for (int i=0; i < Seed.length; i++) {
         Wcoord WC = Seed[i].translated( translacao );
         hash.put( WC.toString(), WC );
-        WC.display();
+        //WC.display();
       }
     }
   }
+  
+  StringList save = new StringList();
+  save.append("<svg>");
+  int sid = 0;
 
   stroke(0);
   strokeWeight(0.1);
@@ -86,6 +100,8 @@ void draw() {
         }
         PVector A = WC.display_coords();
         for( int n = 0; n < face-1; n++ ){
+          
+          String sl = "\t<path id=\"path_"+sid+"\" d=\"M "; sid++;
   
           int diff = neighs[n+1] - neighs[n];
           int skip = 12/polytype[diff];
@@ -97,14 +113,20 @@ void draw() {
             Wcoord nfc = fc.translated( dir12[ (neighs[n] + f) % 12 ] );
             PVector F = nfc.display_coords();
             vertex( F.x, F.y );
+            sl = sl.concat( ZOOM*F.x+","+ZOOM*F.y+" " );
             fc = nfc;
           }
           endShape(CLOSE);
+          
+          sl = sl.concat( "z\" style=\"fill:#"+palettestr[ diff ]+";stroke:#000000;stroke-width:0.1;stroke-linejoin:bevel\"/>" );
+          save.append( sl );
         }
       }
     }
   }
-
+  
+  save.append("</svg>");
+  saveStrings( ID+".svg", save.array() );
 
   noLoop();
 }
