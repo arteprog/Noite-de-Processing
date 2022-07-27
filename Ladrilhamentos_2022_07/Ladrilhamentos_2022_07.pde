@@ -18,80 +18,19 @@ void setup() {
 
   sq3 = sqrt(3);
   
-  //GLM
-  /*
-  T1 = new Wcoord( -1, 0, 2, 2 );
-  T2 = new Wcoord( 3, 2, -1, -2 );
-  Seed = new Wcoord[10];
-  Seed[0] = new Wcoord( 0, 0, 0, 0 );
-  Seed[1] = new Wcoord( -1, 0, 2, 1);
-  Seed[2] = new Wcoord( 0, 0, 1, 0 );
-  Seed[3] = new Wcoord( 0, 0, 1, 1 );
-  Seed[4] = new Wcoord( 0, 1, 1, 0 );
-  Seed[5] = new Wcoord( 1, 1, 1, 0 );
-  Seed[6] = new Wcoord( 1, 2, 1, -1);
-  Seed[7] = new Wcoord( 1, 2, 1, 0 );
-  Seed[8] = new Wcoord( 2, 2, 0, -2);
-  Seed[9] = new Wcoord( 2, 2, 0, -1);*/
-  
-  //t6020
-  T1 = new Wcoord(-3,0,6,3);
-  T2 = new Wcoord(6,3,-3,-3);
-  Seed = new Wcoord[54];
-  Seed[0] = new Wcoord(0,0,0,0);
-  Seed[1] = new Wcoord(0,0,0,2);
-  Seed[2] = new Wcoord(0,-1,2,3);
-  Seed[3] = new Wcoord(-1,-1,4,3);
-  Seed[4] = new Wcoord(0,0,1,2);
-  Seed[5] = new Wcoord(-2,0,5,3);
-  Seed[6] = new Wcoord(0,-1,3,3);
-  Seed[7] = new Wcoord(0,1,0,0);
-  Seed[8] = new Wcoord(0,1,0,1);
-  Seed[9] = new Wcoord(0,0,2,2);
-  Seed[10] = new Wcoord(-1,0,4,3);
-  Seed[11] = new Wcoord(1,1,-1,0);
-  Seed[12] = new Wcoord(0,1,1,1);
-  Seed[13] = new Wcoord(0,0,3,2);
-  Seed[14] = new Wcoord(0,0,3,3);
-  Seed[15] = new Wcoord(0,2,0,0);
-  Seed[16] = new Wcoord(0,1,2,1);
-  Seed[17] = new Wcoord(-1,1,4,3);
-  Seed[18] = new Wcoord(0,2,1,0);
-  Seed[19] = new Wcoord(1,2,-1,0);
-  Seed[20] = new Wcoord(0,1,3,1);
-  Seed[21] = new Wcoord(0,1,3,3);
-  Seed[22] = new Wcoord(1,2,0,0);
-  Seed[23] = new Wcoord(2,2,-2,0);
-  Seed[24] = new Wcoord(0,2,2,0);
-  Seed[25] = new Wcoord(3,2,-3,0);
-  Seed[26] = new Wcoord(0,2,3,0);
-  Seed[27] = new Wcoord(0,2,3,1);
-  Seed[28] = new Wcoord(0,2,3,2);
-  Seed[29] = new Wcoord(3,2,-2,0);
-  Seed[30] = new Wcoord(1,2,2,0);
-  Seed[31] = new Wcoord(2,2,0,0);
-  Seed[32] = new Wcoord(4,2,-3,0);
-  Seed[33] = new Wcoord(1,2,3,0);
-  Seed[34] = new Wcoord(1,2,3,1);
-  Seed[35] = new Wcoord(1,2,3,2);
-  Seed[36] = new Wcoord(3,2,-1,0);
-  Seed[37] = new Wcoord(2,2,1,0);
-  Seed[38] = new Wcoord(5,2,-3,-1);
-  Seed[39] = new Wcoord(5,2,-3,0);
-  Seed[40] = new Wcoord(2,2,3,0);
-  Seed[41] = new Wcoord(2,2,3,1);
-  Seed[42] = new Wcoord(4,2,-1,0);
-  Seed[43] = new Wcoord(3,2,1,0);
-  Seed[44] = new Wcoord(5,2,-2,0);
-  Seed[45] = new Wcoord(4,2,0,0);
-  Seed[46] = new Wcoord(3,2,2,0);
-  Seed[47] = new Wcoord(6,2,-3,0);
-  Seed[48] = new Wcoord(3,2,3,0);
-  Seed[49] = new Wcoord(6,2,-3,-2);
-  Seed[50] = new Wcoord(6,2,-3,-1);
-  Seed[51] = new Wcoord(6,2,-2,0);
-  Seed[52] = new Wcoord(4,2,2,0);
-  Seed[53] = new Wcoord(5,2,0,0);
+  JSONObject json;
+  json = loadJSONObject("Galebach.json");//SaeSa.json
+  JSONObject ladrilhamento = json.getJSONObject("t6371");
+  JSONArray t1a = ladrilhamento.getJSONArray("T1");
+  T1 = new Wcoord( t1a.getInt(0), t1a.getInt(1), t1a.getInt(2), t1a.getInt(3) );
+  JSONArray t2a = ladrilhamento.getJSONArray("T2");
+  T2 = new Wcoord( t2a.getInt(0), t2a.getInt(1), t2a.getInt(2), t2a.getInt(3) );
+  JSONArray seeda = ladrilhamento.getJSONArray("Seed");
+  Seed = new Wcoord[seeda.size()];
+  for (int i = 0; i < seeda.size(); i++) {
+    JSONArray coord = seeda.getJSONArray(i); 
+    Seed[i] = new Wcoord( coord.getInt(0), coord.getInt(1), coord.getInt(2), coord.getInt(3) );
+  }  
 
   dir12 = new Wcoord[12];
   dir12[0] = new Wcoord(1, 0, 0, 0);
