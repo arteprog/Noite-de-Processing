@@ -1,6 +1,7 @@
-# You'll need py5.ixora.io using "imported mode" (either CLI sketch runner or Thonny + thonny-py5mode)
-# To install py5: https://abav.lugaralgum.com/como-instalar-py5/ (PT & EN)
-# You'll need to install pymunk.org too.
+# This code is made for py5 https://p5coding.org using "imported mode"
+# (either use the CLI sketch runner or Thonny + thonny-py5mode plugin)
+# Thonny + py5 install instructions: https://abav.lugaralgum.com/como-instalar-py5
+# You'll also need to install pymunk https://pymunk.org
 
 import pymunk as pm   # importa lib de simulação
 from random import choice
@@ -342,17 +343,17 @@ def rotate_offset_points(pts, angle, offx, offy, y0=0, x0=0):
              ((yp - y0) * cos(angle) + (xp - x0) * sin(angle)) + y0 + offy)
                 for xp, yp in pts]
 
-def median_center( verts ):
+def median_center(verts):
         minx =  999999
         miny =  999999
         maxx = -999999
         maxy = -999999
         for x,y in verts:
-                if( x < minx ): minx = x
-                if( y < miny ): miny = y
-                if( x > maxx ): maxx = x
-                if( y > maxy ): maxy = y
-        return ( minx + 0.5*(maxx-minx), miny + 0.5*(maxy-miny) )
+                if x < minx: minx = x
+                if y < miny: miny = y
+                if x > maxx: maxx = x
+                if y > maxy: maxy = y
+        return minx + 0.5*(maxx-minx), miny + 0.5*(maxy-miny)
 
 
 def cpvsetlength( V, l ):
@@ -393,11 +394,8 @@ def assemble_bouncy_pad(A, B, pad_h=60, pad_tck=20, springs=5, stiffness=400, da
             constraints.append(ds)
             space.add( ds )
     
-
-
-
 def mouse_clicked():
-    print(mouse_x, mouse_y)
+    print(f'{mouse_x}, {mouse_y}')
 
 def key_pressed():
     keys[key] = True
